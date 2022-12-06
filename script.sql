@@ -1,7 +1,23 @@
+CREATE USER cc1mg2 WITH
+  SUPERUSER
+  CREATEDB
+  CREATEROLE
+  INHERIT
+  REPLICATION
+  BYPASSRLS
+  ENCRYPTED PASSWORD 'grupo2'
+;
 
+CREATE DATABASE uvv
+  WITH OWNER = cc1mg2
+  TEMPLATE = template0
+  ENCODING = 'UTF8'
+  LC_COLLATE = 'pt_BR.UTF-8'
+  LC_CTYPE = 'pt_BR.UTF-8'
+  ALLOW_CONNECTIONS = true
+;
 
-
-
+\c uvv cc1mg2;
 
 CREATE TABLE nomes_usuario (
                 nome_usuario VARCHAR(35) NOT NULL,
